@@ -4,17 +4,25 @@
     {
         static void Main(string[] args)
         {
-            //for (int i = 1; i <= 10; i+=3)
-            //{
-            //    Console.WriteLine(i);
-            //}
+            Console.Write("How many rows?: ");
+            int rows = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = 10; i > 0; i--)
+            Console.Write("How many columns?: ");
+            int columns = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("What symbol?: ");
+            string symbol = Console.ReadLine();
+
+            for (int i = 0; i < rows; i++)
             {
-                Console.WriteLine(i);
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.Write(symbol);
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine("Happy new year");
 
+        
         }
     }
 }
