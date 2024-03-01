@@ -4,16 +4,24 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter side A: ");
-            double a = Convert.ToDouble(Console.ReadLine());
+
+            string fullname = "Aaron Lal";
+            string phoneNumber = "123-456-7890";
+
+            //fullname = fullname.ToUpper();
+            //fullname = fullname.ToLower();
+
+            //phoneNumber = phoneNumber.Replace("-", "");
+
+            //string userName = fullname.Insert(0, "Mr.");
+
+            string firstName = fullname.Substring(0, 5);
+            string lastName = fullname.Substring(6, 3);
+
             
-            Console.WriteLine("Enter side B: ");
-            double b = Convert.ToDouble(Console.ReadLine());
 
-            double c = Math.Sqrt((a * a) + (b * b));
-
-            Console.WriteLine("The hypotenuse is: " + c);
-
+            Console.WriteLine(firstName);
+            Console.WriteLine(lastName);
         }
     }
 }
