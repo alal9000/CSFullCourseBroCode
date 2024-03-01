@@ -4,19 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Random random = new Random();
+            Console.WriteLine("Enter side A: ");
+            double a = Convert.ToDouble(Console.ReadLine());
+            
+            Console.WriteLine("Enter side B: ");
+            double b = Convert.ToDouble(Console.ReadLine());
 
+            double c = Math.Sqrt((a * a) + (b * b));
 
-
-            int num1 = random.Next(1, 7);
-            int num2 = random.Next(1, 7);
-            int num3 = random.Next(1, 7);
-
-            //double num = random.NextDouble();
-
-            Console.WriteLine(num1);
-            Console.WriteLine(num2);
-            Console.WriteLine(num3);
+            Console.WriteLine("The hypotenuse is: " + c);
 
         }
     }
