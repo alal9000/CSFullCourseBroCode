@@ -4,27 +4,19 @@
     {
         static void Main(string[] args)
         {
-            double x = 3.99;
-            double y = 5;
-            //double a = Math.Pow(x, 3);
-
-            //double b = Math.Sqrt(x);
-
-            //double c = Math.Abs(x);
-
-            //double d = Math.Round(x);
-
-            //double e = Math.Ceiling(x);
-
-            //double f = Math.Floor(x);
-
-            //double g = Math.Max(x, y);
-
-            double h = Math.Min(x, y);
+            Random random = new Random();
 
 
 
-            Console.WriteLine(h);
+            int num1 = random.Next(1, 7);
+            int num2 = random.Next(1, 7);
+            int num3 = random.Next(1, 7);
+
+            //double num = random.NextDouble();
+
+            Console.WriteLine(num1);
+            Console.WriteLine(num2);
+            Console.WriteLine(num3);
 
         }
     }
