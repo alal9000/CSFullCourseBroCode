@@ -5,17 +5,17 @@
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Whats the temperature outside?");
-            double temp = Convert.ToDouble(Console.ReadLine());
+            string name = "";
 
-            if (temp >= 10 && temp <= 25)
+            while (name == "")
             {
-                Console.WriteLine("Its warm outside");
+                Console.Write("Enter your name: ");
+                name = Console.ReadLine();
+
+
             }
-            else if (temp <= -50 || temp >= 50)
-            {
-                Console.WriteLine("Do not go outside");
-            }
+
+            Console.WriteLine("Hello " + name);
 
         }
     }
