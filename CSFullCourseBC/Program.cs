@@ -4,20 +4,29 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Hey!");
-            Console.WriteLine("Hello!");
+            int x; // declaration
+            x = 123; // initialization
 
-            // This is a comment
-            /*
-             * this
-             * is a
-             * multiline
-             * comment
-             */
+            int y = 321; // declaration + initization
 
-            Console.WriteLine("Aaron\nLal");
+            int z = x + y;
 
-            Console.ReadKey();
+            int age = 21; // whole integer
+            double height = 300.5; // decimal number
+            bool alive = false;
+            char symbol = '@';
+            string name = "Aaron";
+
+
+            Console.WriteLine("Hello " + name);
+            Console.WriteLine("your age is: " + age);
+            Console.WriteLine("You height is: " + height + "cm");
+            Console.WriteLine("Are you alive? " + alive);
+            Console.WriteLine("You symbol is " + symbol);
+
+            string userName = symbol + name;
+
+            Console.WriteLine("Your username is: " + userName);
         }
     }
 }
