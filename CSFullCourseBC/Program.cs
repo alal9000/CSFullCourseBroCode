@@ -4,28 +4,27 @@
     {
         static void Main(string[] args)
         {
-            int friends = 10;
+            double x = 3.99;
+            double y = 5;
+            //double a = Math.Pow(x, 3);
 
-            //friends = friends + 2;
-            //friends += 2;
-            //friends++;
+            //double b = Math.Sqrt(x);
 
-            //friends = friends - 1;
-            //friends -= 1;
-            //friends--;
+            //double c = Math.Abs(x);
 
-            //friends = friends * 2;
-            //friends *= 2;
+            //double d = Math.Round(x);
 
-            //friends = friends / 2;
-            //friends /= 2;
+            //double e = Math.Ceiling(x);
 
-            int remainder = friends % 2;
+            //double f = Math.Floor(x);
+
+            //double g = Math.Max(x, y);
+
+            double h = Math.Min(x, y);
 
 
 
-            Console.WriteLine(remainder);
-
+            Console.WriteLine(h);
 
         }
     }
