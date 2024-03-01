@@ -4,30 +4,15 @@
     {
         static void Main(string[] args)
         {
-            double a = 3.14;
+            Console.WriteLine("What's your name?");
+            string name = Console.ReadLine();
 
-            int b = Convert.ToInt32(a);
+            Console.WriteLine("What's your age?");
+            int age = Convert.ToInt32(Console.ReadLine());
 
-            int c = 123;
-            double d = Convert.ToDouble(c);
+            Console.WriteLine("Hello " + name);
+            Console.WriteLine("You are " + age + " years old");
 
-            int e = 321;
-            string f = Convert.ToString(e);
-
-            string g = "$";
-            char h = Convert.ToChar(g);
-
-            string i = "true";
-            bool j = Convert.ToBoolean(i);
-            
-
-
-
-            Console.WriteLine(b.GetType);
-            Console.WriteLine(d.GetType());
-            Console.WriteLine(f.GetType());
-            Console.WriteLine(h.GetType());
-            Console.WriteLine(j.GetType());
 
         }
     }
