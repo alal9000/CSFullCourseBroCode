@@ -5,35 +5,44 @@
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Please enter your name: ");
-            string name = Console.ReadLine();
+            Console.WriteLine("What day is it today?");
+            string day = Console.ReadLine();
 
-            //if (age > 100)
-            //{
-            //    Console.WriteLine("You are too old to sign up");
-            //}
-            //else if (age < 0)
-            //{
-            //    Console.WriteLine("You havn't been born yet");
-            //}
-            //else if (age >= 18)
-            //{
-            //    Console.WriteLine("You are now signed up");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("You must be 18+ to sign up");
-            //}
+            switch (day)
+            {
+                case "Monday":
+                    Console.WriteLine("Its Monday");
+                    break;
 
-            if (name != "")
-            {
-                Console.WriteLine("Hello " + name);
-                
+                case "Tuesday":
+                    Console.WriteLine("Its Tuesday");
+                    break;
+
+                case "Wednesday":
+                    Console.WriteLine("Its Wednesday");
+                    break;
+
+                case "Thursday":
+                    Console.WriteLine("Its Thursday");
+                    break;
+
+                case "Friday":
+                    Console.WriteLine("Its Friday");
+                    break;
+
+                case "Saturday":
+                    Console.WriteLine("Its Saturday");
+                    break;
+
+                case "Sunday":
+                    Console.WriteLine("Its Sunday");
+                    break;
+
+                default:
+                    Console.WriteLine(day + " is not a day");
+                    break;
             }
-            else
-            {
-                Console.WriteLine("You did not enter your name");
-            }
+
 
 
 
