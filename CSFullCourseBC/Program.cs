@@ -5,46 +5,17 @@
         static void Main(string[] args)
         {
 
-            Console.WriteLine("What day is it today?");
-            string day = Console.ReadLine();
+            Console.WriteLine("Whats the temperature outside?");
+            double temp = Convert.ToDouble(Console.ReadLine());
 
-            switch (day)
+            if (temp >= 10 && temp <= 25)
             {
-                case "Monday":
-                    Console.WriteLine("Its Monday");
-                    break;
-
-                case "Tuesday":
-                    Console.WriteLine("Its Tuesday");
-                    break;
-
-                case "Wednesday":
-                    Console.WriteLine("Its Wednesday");
-                    break;
-
-                case "Thursday":
-                    Console.WriteLine("Its Thursday");
-                    break;
-
-                case "Friday":
-                    Console.WriteLine("Its Friday");
-                    break;
-
-                case "Saturday":
-                    Console.WriteLine("Its Saturday");
-                    break;
-
-                case "Sunday":
-                    Console.WriteLine("Its Sunday");
-                    break;
-
-                default:
-                    Console.WriteLine(day + " is not a day");
-                    break;
+                Console.WriteLine("Its warm outside");
             }
-
-
-
+            else if (temp <= -50 || temp >= 50)
+            {
+                Console.WriteLine("Do not go outside");
+            }
 
         }
     }
