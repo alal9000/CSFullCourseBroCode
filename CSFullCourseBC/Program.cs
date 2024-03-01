@@ -5,23 +5,38 @@
         static void Main(string[] args)
         {
 
-            string fullname = "Aaron Lal";
-            string phoneNumber = "123-456-7890";
+            Console.WriteLine("Please enter your name: ");
+            string name = Console.ReadLine();
 
-            //fullname = fullname.ToUpper();
-            //fullname = fullname.ToLower();
+            //if (age > 100)
+            //{
+            //    Console.WriteLine("You are too old to sign up");
+            //}
+            //else if (age < 0)
+            //{
+            //    Console.WriteLine("You havn't been born yet");
+            //}
+            //else if (age >= 18)
+            //{
+            //    Console.WriteLine("You are now signed up");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("You must be 18+ to sign up");
+            //}
 
-            //phoneNumber = phoneNumber.Replace("-", "");
+            if (name != "")
+            {
+                Console.WriteLine("Hello " + name);
+                
+            }
+            else
+            {
+                Console.WriteLine("You did not enter your name");
+            }
 
-            //string userName = fullname.Insert(0, "Mr.");
 
-            string firstName = fullname.Substring(0, 5);
-            string lastName = fullname.Substring(6, 3);
 
-            
-
-            Console.WriteLine(firstName);
-            Console.WriteLine(lastName);
         }
     }
 }
