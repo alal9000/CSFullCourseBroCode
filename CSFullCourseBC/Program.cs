@@ -4,18 +4,16 @@
     {
         static void Main(string[] args)
         {
+            //for (int i = 1; i <= 10; i+=3)
+            //{
+            //    Console.WriteLine(i);
+            //}
 
-            string name = "";
-
-            while (name == "")
+            for (int i = 10; i > 0; i--)
             {
-                Console.Write("Enter your name: ");
-                name = Console.ReadLine();
-
-
+                Console.WriteLine(i);
             }
-
-            Console.WriteLine("Hello " + name);
+            Console.WriteLine("Happy new year");
 
         }
     }
