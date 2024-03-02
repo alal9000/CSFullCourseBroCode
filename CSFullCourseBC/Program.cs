@@ -4,19 +4,22 @@
     {
         static void Main(string[] args)
         {
-            string[] cars = { "BMW", "Mustang", "Corvette" };
+            string name = "Aaron";
+            int age = 21;
+
+            singHappyBirthday(name, age);
 
 
-            //for (int i = 0; i < cars.Length; i++)
-            //{
-            //    Console.WriteLine(cars[i]);
-            //}
+        }
 
-            foreach (string car in cars)
-            {
-                Console.WriteLine(car);
-            }
-
+        static void singHappyBirthday(string birthdayBoy, int yearsOld)
+        {
+            Console.WriteLine("Happy birthday to you");
+            Console.WriteLine("Happy birthday to you");
+            Console.WriteLine("Happy birthday dear " + birthdayBoy);
+            Console.WriteLine("You are " + yearsOld + " years old");
+            Console.WriteLine("Happy birthday to you");
+            Console.WriteLine();
         }
     }
 }
