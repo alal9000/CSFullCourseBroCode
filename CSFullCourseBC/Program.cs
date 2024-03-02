@@ -4,10 +4,15 @@
     {
         static void Main(string[] args)
         {
-            double temperature = 20;
-            string message;
+            string firstName = "Aaron";
+            string lastName = "Lal";
+            int age = 21;
 
-            Console.WriteLine((temperature >= 15) ? "Its warm outside" : "Its cold outside");
+            //Console.WriteLine("Hello " + firstName + " " + lastName + ".");
+            //Console.WriteLine("You are " + age + " years old");
+
+            Console.WriteLine($"Hello {firstName} {lastName}.");
+            Console.WriteLine($"You are {age} years old.");
 
 
         }
