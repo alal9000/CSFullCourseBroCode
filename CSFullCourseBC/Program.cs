@@ -4,22 +4,27 @@
     {
         static void Main(string[] args)
         {
-            string name = "Aaron";
-            int age = 21;
+            double x;
+            double y;
+            double result;
 
-            singHappyBirthday(name, age);
+            Console.WriteLine("Enter in number 1: ");
+            x = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter in number 2: ");
+            y = Convert.ToDouble(Console.ReadLine());
+
+            result = Multiply(x, y);
+
+            Console.WriteLine(result);
 
 
         }
 
-        static void singHappyBirthday(string birthdayBoy, int yearsOld)
+        static double Multiply(double x, double y)
         {
-            Console.WriteLine("Happy birthday to you");
-            Console.WriteLine("Happy birthday to you");
-            Console.WriteLine("Happy birthday dear " + birthdayBoy);
-            Console.WriteLine("You are " + yearsOld + " years old");
-            Console.WriteLine("Happy birthday to you");
-            Console.WriteLine();
+            
+            return x * y;
         }
     }
 }
