@@ -5,25 +5,24 @@
         static void Main(string[] args)
         {
 
-            double total;
-
-            total = Multiply(2, 3, 4);
+            double total = CheckOut(3.99, 5.75, 15, 1.00, 10.25);
 
             Console.WriteLine(total);
 
 
         }
 
-        static double Multiply(double a, double b)
+        static double CheckOut(params double[] prices)
         {
+            double total = 0;
+
+            foreach (double price in prices)
+            {
+                total += price;
+            }
             
-            return a * b;
+            return total;
         }
 
-        static double Multiply(double a, double b, double c)
-        {
-
-            return a * b * c;
-        }
     }
 }
