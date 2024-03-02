@@ -4,27 +4,26 @@
     {
         static void Main(string[] args)
         {
-            double x;
-            double y;
-            double result;
 
-            Console.WriteLine("Enter in number 1: ");
-            x = Convert.ToDouble(Console.ReadLine());
+            double total;
 
-            Console.WriteLine("Enter in number 2: ");
-            y = Convert.ToDouble(Console.ReadLine());
+            total = Multiply(2, 3, 4);
 
-            result = Multiply(x, y);
-
-            Console.WriteLine(result);
+            Console.WriteLine(total);
 
 
         }
 
-        static double Multiply(double x, double y)
+        static double Multiply(double a, double b)
         {
             
-            return x * y;
+            return a * b;
+        }
+
+        static double Multiply(double a, double b, double c)
+        {
+
+            return a * b * c;
         }
     }
 }
