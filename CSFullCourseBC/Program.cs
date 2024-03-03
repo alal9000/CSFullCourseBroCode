@@ -4,44 +4,46 @@
     {
         static void Main(string[] args)
         {
-
-            Car car1 = new Car("Mustang");
-            Car car2 = new Car("Corvette");
-            Car car3 = new Car("Lambo");
-
-            Console.WriteLine(Car.numberOfCars);
-
-            Car.StartRace();
-
-
-
-
-
+            Pizza pizza = new Pizza("stuffed crust");
         }
 
     }
-
-
-    class Car
+    class Pizza
     {
+        string bread;
+        string sauce;
+        string cheese;
+        string topping;
 
-        string model;
-        public static int numberOfCars;
-
-
-        public Car(string model)
+        public Pizza(string bread)
         {
-            this.model = model;
-            numberOfCars++;
-
+            this.bread = bread;
         }
 
-        public static void StartRace()
+        public Pizza(string bread, string sauce)
         {
-            Console.WriteLine("The race has begun");
+            this.bread = bread;
+            this.sauce = sauce;
         }
 
+        public Pizza(string bread, string sauce, string cheese)
+        {
+            this.bread = bread;
+            this.sauce = sauce;
+            this.cheese = cheese;
+        }
+
+        public Pizza(string bread, string sauce, string cheese, string topping)
+        {
+            this.bread = bread;
+            this.sauce = sauce;
+            this.cheese = cheese;
+            this.topping = topping;
+        }
+
+        
     }
+
 
       
 
