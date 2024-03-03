@@ -4,48 +4,52 @@
     {
         static void Main(string[] args)
         {
-            Pizza pizza = new Pizza("stuffed crust");
+            Car car = new Car();
+            Bicycle bicycle = new Bicycle();
+            Boat boat = new Boat();
+
+            Console.WriteLine(car.speed);
+            Console.WriteLine(car.wheels);
+            car.Go();
+
+
+            Console.WriteLine(bicycle.speed);
+            Console.WriteLine(bicycle.wheels);
+            bicycle.Go();
+
+            Console.WriteLine(boat.speed);
+            Console.WriteLine(boat.wheels);
+            boat.Go();
+
         }
 
     }
-    class Pizza
+    class Vehicle
     {
-        string bread;
-        string sauce;
-        string cheese;
-        string topping;
+        public int speed = 0;
 
-        public Pizza(string bread)
+        public void Go()
         {
-            this.bread = bread;
+            Console.WriteLine("This vehicle is moving");
         }
+    }
 
-        public Pizza(string bread, string sauce)
-        {
-            this.bread = bread;
-            this.sauce = sauce;
-        }
+    class Car : Vehicle
+    {
+        public int wheels = 4;
+    }
 
-        public Pizza(string bread, string sauce, string cheese)
-        {
-            this.bread = bread;
-            this.sauce = sauce;
-            this.cheese = cheese;
-        }
+    class Bicycle : Vehicle
+    {
+        public int wheels = 2;
+    }
 
-        public Pizza(string bread, string sauce, string cheese, string topping)
-        {
-            this.bread = bread;
-            this.sauce = sauce;
-            this.cheese = cheese;
-            this.topping = topping;
-        }
-
-        
+    class Boat : Vehicle
+    {
+        public int wheels = 0;
     }
 
 
-      
 
-    
+
 }
