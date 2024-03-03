@@ -4,22 +4,15 @@
     {
         static void Main(string[] args)
         {
-            //Human human1 = new Human("Rick", 65);
-            //Human human2 = new Human("Morty", 16);
 
-            //human1.Eat();
-            //human1.Sleep();
-            //human1.howOld();
+            Car car1 = new Car("Mustang");
+            Car car2 = new Car("Corvette");
+            Car car3 = new Car("Lambo");
 
-            //human2.Eat();
-            //human2.Sleep();
-            //human2.howOld();
+            Console.WriteLine(Car.numberOfCars);
 
-            Car car1 = new Car("Ford", "Mustang", 2022, "red");
-            Car car2 = new Car("Chevy", "Corvette", 2021, "blue");
+            Car.StartRace();
 
-            car1.Drive();
-            car2.Drive();
 
 
 
@@ -27,53 +20,27 @@
         }
 
     }
-    //class Human
-    //{
-    //    public string name;
-    //    public int age;
 
-    //    public Human(string name, int age)
-    //    {
-    //        this.name = name;
-    //        this.age = age;
-    //    }
-
-    //    public void Eat()
-    //    {
-    //        Console.WriteLine(name + " is eating");
-    //    }
-
-    //    public void Sleep()
-    //    {
-    //        Console.WriteLine(name + " is sleeping");
-    //    }
-
-    //    public void howOld()
-    //    {
-    //        Console.WriteLine(name + " is " + age + " years old");
-    //    }
-
-    //}
 
     class Car
     {
-        string make;
+
         string model;
-        int year;
-        string color;
+        public static int numberOfCars;
 
-        public Car(string make, string model, int year, string color)
+
+        public Car(string model)
         {
-            this.make = make;
             this.model = model;
-            this.year = year;
-            this.color = color;
+            numberOfCars++;
+
         }
 
-        public void Drive()
+        public static void StartRace()
         {
-            Console.WriteLine("You drive the " + make + " " + model);
+            Console.WriteLine("The race has begun");
         }
+
     }
 
       
