@@ -8,7 +8,7 @@
             Bicycle bicycle = new Bicycle();
             Boat boat = new Boat();
 
-            Vehicle vehicle = new Vehicle();
+            //Vehicle vehicle = new Vehicle();
 
 
         }
