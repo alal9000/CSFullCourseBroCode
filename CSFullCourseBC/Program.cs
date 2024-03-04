@@ -1,4 +1,4 @@
-﻿
+﻿using System.Reflection;
 
 namespace CSFullCourseBC
 {
@@ -6,39 +6,35 @@ namespace CSFullCourseBC
     {
         static void Main(string[] args)
         {
-            Dog dog = new Dog();
-            Cat cat = new Cat();
 
-            dog.Speak();
-            cat.Speak();
+            Car car = new Car("Chevy", "Corvette", 2022, "blue");
+
+            Console.WriteLine(car);
 
         }
 
 
 
-
     }
 
-    class Animal
+    class Car
     {
-        public virtual void Speak() 
+        string make;
+        string model;
+        int year;
+        string color;
+
+        public Car(string make, string model, int year, string color)
         {
-            Console.WriteLine("The animal goes *brrr*");
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.color = color;
+
         }
-
-    }
-    class Dog : Animal
-    {
-        public override void Speak()
+        public override string ToString()
         {
-            Console.WriteLine("The dog goes *woof*");
-        }
-    }
-    class Cat : Animal
-    {
-        public override void Speak()
-        {
-            Console.WriteLine("The cat goes *meow*");
+            return "this is a " + make + " " + model;
         }
     }
 
