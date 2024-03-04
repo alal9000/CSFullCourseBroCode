@@ -6,34 +6,39 @@ namespace CSFullCourseBC
     {
         static void Main(string[] args)
         {
-            Car car1 = new Car("Mustang", "red");
+            Dog dog = new Dog();
+            Cat cat = new Cat();
 
-            Car car2 = Copy(car1);
-
-
-            Console.WriteLine(car2.color + " " + car2.model);
-
+            dog.Speak();
+            cat.Speak();
 
         }
 
-        static Car Copy(Car car)
-        {
-            return new Car(car.model, car.color);
-        }
+
 
 
     }
 
-    class Car
+    class Animal
     {
-        public string model;
-        public string color;
-
-        public Car(string model, string color)
+        public virtual void Speak() 
         {
-            this.model = model;
-            this.color = color;
+            Console.WriteLine("The animal goes *brrr*");
+        }
 
+    }
+    class Dog : Animal
+    {
+        public override void Speak()
+        {
+            Console.WriteLine("The dog goes *woof*");
+        }
+    }
+    class Cat : Animal
+    {
+        public override void Speak()
+        {
+            Console.WriteLine("The cat goes *meow*");
         }
     }
 
