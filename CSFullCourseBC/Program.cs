@@ -6,10 +6,17 @@ namespace CSFullCourseBC
     {
         static void Main(string[] args)
         {
+            Car car = new Car();
+            Bicycle bicycle = new Bicycle();
+            Boat boat = new Boat();
 
-            Car car = new Car("Chevy", "Corvette", 2022, "blue");
+            Vehicle[] vehicles = { car, bicycle, boat };
 
-            Console.WriteLine(car);
+            foreach (Vehicle vehicle in vehicles)
+            {
+                vehicle.Go();
+            }
+
 
         }
 
@@ -17,30 +24,36 @@ namespace CSFullCourseBC
 
     }
 
-    class Car
+    class Vehicle
     {
-        string make;
-        string model;
-        int year;
-        string color;
-
-        public Car(string make, string model, int year, string color)
+        public virtual void Go()
         {
-            this.make = make;
-            this.model = model;
-            this.year = year;
-            this.color = color;
 
-        }
-        public override string ToString()
-        {
-            return "this is a " + make + " " + model;
         }
     }
 
+    class Car : Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The car is moving");
+        }
+    }
 
+    class Bicycle : Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The bicycle is moving");
+        }
+    }
 
-
-
+    class Boat : Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The boat is moving");
+        }
+    }
 
 }
