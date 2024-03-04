@@ -6,17 +6,15 @@ namespace CSFullCourseBC
     {
         static void Main(string[] args)
         {
-            Car car = new Car();
-            Bicycle bicycle = new Bicycle();
-            Boat boat = new Boat();
+            Rabbit rabbit = new Rabbit();
+            Hawk hawk = new Hawk();
+            Fish fish = new Fish();
 
-            Vehicle[] vehicles = { car, bicycle, boat };
+            //rabbit.Flee();
+            //hawk.Hunt();
 
-            foreach (Vehicle vehicle in vehicles)
-            {
-                vehicle.Go();
-            }
-
+            fish.Flee();
+            fish.Hunt();
 
         }
 
@@ -24,36 +22,43 @@ namespace CSFullCourseBC
 
     }
 
-    class Vehicle
+    class Rabbit : IPrey
     {
-        public virtual void Go()
+        public void Flee()
         {
-
+            Console.WriteLine("The rabbit runs away!");
         }
     }
 
-    class Car : Vehicle
+    class Hawk : IPredator
     {
-        public override void Go()
+        public void Hunt()
         {
-            Console.WriteLine("The car is moving");
+            Console.WriteLine("The hawk is searching for food");
         }
     }
 
-    class Bicycle : Vehicle
+    class Fish : IPredator, IPrey
     {
-        public override void Go()
+        public void Flee()
         {
-            Console.WriteLine("The bicycle is moving");
+            Console.WriteLine("The fish swims away!");
+        }
+
+        public void Hunt()
+        {
+            Console.WriteLine("The fish is searching for smaller fish");
         }
     }
 
-    class Boat : Vehicle
+    interface IPrey
     {
-        public override void Go()
-        {
-            Console.WriteLine("The boat is moving");
-        }
+        void Flee();
+    }
+
+    interface IPredator
+    {
+        void Hunt();
     }
 
 }
