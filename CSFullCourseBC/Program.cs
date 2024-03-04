@@ -1,46 +1,48 @@
-﻿namespace CSFullCourseBC
+﻿using System.Reflection;
+
+namespace CSFullCourseBC
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            Car car = new Car();
-            Bicycle bicycle = new Bicycle();
-            Boat boat = new Boat();
+            //Car[] garage = new Car[3];
 
-            //Vehicle vehicle = new Vehicle();
+            //Car car1 = new Car("Mustang");
+            //Car car2 = new Car("Corvette");
+            //Car car3 = new Car("Lambo");
+
+            //garage[0] = car1;   
+            //garage[1] = car2;   
+            //garage[2] = car3;
+
+            Car[] garage = { new Car("Mustang"), new Car("Corvette"), new Car("Lambo") };
+
+            //Console.WriteLine(garage[0].model);
+            //Console.WriteLine(garage[1].model);
+            //Console.WriteLine(garage[2].model);
+
+            foreach (Car car in garage)
+            {
+                Console.WriteLine(car.model);
+            }
 
 
         }
 
     }
-    abstract class Vehicle
-    {
-        public int speed = 0;
 
-        public void Go()
+    class Car
+    {
+        public string model;
+
+        public Car(string model)
         {
-            Console.WriteLine("This vehicle is moving");
+            this.model = model;
         }
     }
 
-    class Car : Vehicle
-    {
-        public int wheels = 4;
-        int maxSpeed = 500;
-    }
 
-    class Bicycle : Vehicle
-    {
-        public int wheels = 2;
-        int maxSpeed = 50;
-    }
-
-    class Boat : Vehicle
-    {
-        public int wheels = 0;
-        int maxSpeed = 100;
-    }
 
 
 
