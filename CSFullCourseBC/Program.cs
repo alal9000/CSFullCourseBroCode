@@ -5,54 +5,40 @@ namespace CSFullCourseBC
     {
         static void Main(string[] args)
         {
-            int[] intArray = { 1, 2, 3 };
-            double[] doubleArray = { 1.0, 2.0, 3.0 };
-            string[] stringArray = { "1", "2", "3" };
+            Thread mainThread = Thread.CurrentThread;
+            mainThread.Name = "Main Thread";
+            //Console.WriteLine(mainThread.Name);
 
-            DisplayElements(intArray);
-            DisplayElements(doubleArray);
-            DisplayElements(stringArray);
+            Thread thread1 = new Thread(() => CountDown("Timer #1"));
+            Thread thread2 = new Thread(() => CountUp("Timer #2"));
+
+            thread1.Start();
+            thread2.Start();
+
+            Console.WriteLine(mainThread.Name + " is complete");
+
+
 
 
         }
-        //public static void DisplayElements(int[] array)
-        //{
-        //    foreach (int item in array)
-        //    {
-        //        Console.Write(item + " ");
-        //    }
-        //    Console.WriteLine();
-
-        //}
-
-        //public static void DisplayElements(double[] array)
-        //{
-        //    foreach (double item in array)
-        //    {
-        //        Console.Write(item + " ");
-        //    }
-        //    Console.WriteLine();
-
-        //}
-
-        //public static void DisplayElements(string[] array)
-        //{
-        //    foreach (string item in array)
-        //    {
-        //        Console.Write(item + " ");
-        //    }
-        //    Console.WriteLine();
-
-        //}
-
-        public static void DisplayElements<Thing>(Thing[] array)
+        public static void CountDown(string name)
         {
-            foreach (Thing item in array)
+            for (int i = 10; i >= 0; i--)
             {
-                Console.Write(item + " ");
+                Console.WriteLine("Timer #1: " + i + " seconds");
+                Thread.Sleep(1000);
             }
-            Console.WriteLine();
+            Console.WriteLine("Timer #1 is complete");
+        }
 
+        public static void CountUp(string name)
+        {
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.WriteLine("Timer #2: " + i + " seconds");
+                Thread.Sleep(1000);
+            }
+            Console.WriteLine("Timer #2 is complete");
         }
 
 
