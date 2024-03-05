@@ -1,64 +1,55 @@
-﻿using System.Reflection;
-
+﻿
 namespace CSFullCourseBC
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            Rabbit rabbit = new Rabbit();
-            Hawk hawk = new Hawk();
-            Fish fish = new Fish();
+            //string[] food = new string[3];
 
-            //rabbit.Flee();
-            //hawk.Hunt();
 
-            fish.Flee();
-            fish.Hunt();
+            //food[0] = "pizza";
+            //food[1] = "hamburger";
+            //food[2] = "hotdog";
+            //food[3] = "fries";
+
+            List<string> food = new List<string>();
+
+            food.Add("pizza");
+            food.Add("hamburger");
+            food.Add("hotdog");
+            food.Add("fries");
+
+            //Console.WriteLine(food[0]);
+
+            //food.Remove("fries");
+
+            //food.Insert(0, "sushi");
+
+            //Console.WriteLine(food.Count);
+
+            //Console.WriteLine(food.IndexOf("pizza"));
+
+            //Console.WriteLine(food.LastIndexOf("fries"));
+
+            //Console.WriteLine(food.Contains("pizza"));
+
+            //food.Sort();
+
+            //food.Reverse();
+
+            //food.Clear();
+
+            string[] foodArray = food.ToArray();
+
+            foreach (string item in foodArray)
+            {
+                Console.WriteLine(item);
+            }
+
 
         }
 
-
-
-    }
-
-    class Rabbit : IPrey
-    {
-        public void Flee()
-        {
-            Console.WriteLine("The rabbit runs away!");
-        }
-    }
-
-    class Hawk : IPredator
-    {
-        public void Hunt()
-        {
-            Console.WriteLine("The hawk is searching for food");
-        }
-    }
-
-    class Fish : IPredator, IPrey
-    {
-        public void Flee()
-        {
-            Console.WriteLine("The fish swims away!");
-        }
-
-        public void Hunt()
-        {
-            Console.WriteLine("The fish is searching for smaller fish");
-        }
-    }
-
-    interface IPrey
-    {
-        void Flee();
-    }
-
-    interface IPredator
-    {
-        void Hunt();
     }
 
 }
