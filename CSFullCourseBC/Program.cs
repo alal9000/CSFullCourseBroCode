@@ -5,11 +5,9 @@ namespace CSFullCourseBC
     {
         static void Main(string[] args)
         {
-            Car car = new Car(400);
+            Car car = new Car("Civic");
 
-            car.Speed = 10000000;
-
-            Console.WriteLine(car.Speed);
+            Console.WriteLine(car.Model);
 
         }
 
@@ -17,28 +15,19 @@ namespace CSFullCourseBC
 
     class Car
     {
-        private int speed;
+        //string model;
 
-        public int Speed
-        {
-            get { return speed; } // read
-            set // writable
-            {
-                if (value > 500)
-                {
-                    speed = 500;
-                }
-                else
-                {
-                    speed = value;
-                }
-                
-            }
-        }
+        //public string Model
+        //{
+        //    get { return model; }
+        //    set { model = value; }
+        //}
 
-        public Car(int speed)
+        public string Model { get; set; } // this is the same as the above comment
+
+        public Car(string model)
         {
-            Speed = speed;
+            this.Model = model;
         }
 
     }
