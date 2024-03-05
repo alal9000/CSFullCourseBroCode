@@ -5,40 +5,42 @@ namespace CSFullCourseBC
     {
         static void Main(string[] args)
         {
-            List<Player> players = new List<Player>();
+            Car car = new Car(400);
 
-            //Player player1 = new Player("Chad");
-            //Player player2 = new Player("Steve");
-            //Player player3 = new Player("Karen");
+            car.Speed = 10000000;
 
-            players.Add(new Player("Chad"));
-            players.Add(new Player("Steve"));
-            players.Add(new Player("Karen"));
-
-            foreach (Player player in players)
-            {
-                Console.WriteLine(player);
-            }
-
-
+            Console.WriteLine(car.Speed);
 
         }
 
     }
 
-    class Player
+    class Car
     {
-        public string username;
+        private int speed;
 
-        public Player(string username)
+        public int Speed
         {
-            this.username = username;
+            get { return speed; } // read
+            set // writable
+            {
+                if (value > 500)
+                {
+                    speed = 500;
+                }
+                else
+                {
+                    speed = value;
+                }
+                
+            }
         }
 
-        public override string ToString()
+        public Car(int speed)
         {
-            return username;
+            Speed = speed;
         }
+
     }
 
 }
