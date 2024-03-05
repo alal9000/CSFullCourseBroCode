@@ -5,51 +5,40 @@ namespace CSFullCourseBC
     {
         static void Main(string[] args)
         {
-            //string[] food = new string[3];
+            List<Player> players = new List<Player>();
 
+            //Player player1 = new Player("Chad");
+            //Player player2 = new Player("Steve");
+            //Player player3 = new Player("Karen");
 
-            //food[0] = "pizza";
-            //food[1] = "hamburger";
-            //food[2] = "hotdog";
-            //food[3] = "fries";
+            players.Add(new Player("Chad"));
+            players.Add(new Player("Steve"));
+            players.Add(new Player("Karen"));
 
-            List<string> food = new List<string>();
-
-            food.Add("pizza");
-            food.Add("hamburger");
-            food.Add("hotdog");
-            food.Add("fries");
-
-            //Console.WriteLine(food[0]);
-
-            //food.Remove("fries");
-
-            //food.Insert(0, "sushi");
-
-            //Console.WriteLine(food.Count);
-
-            //Console.WriteLine(food.IndexOf("pizza"));
-
-            //Console.WriteLine(food.LastIndexOf("fries"));
-
-            //Console.WriteLine(food.Contains("pizza"));
-
-            //food.Sort();
-
-            //food.Reverse();
-
-            //food.Clear();
-
-            string[] foodArray = food.ToArray();
-
-            foreach (string item in foodArray)
+            foreach (Player player in players)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(player);
             }
+
 
 
         }
 
+    }
+
+    class Player
+    {
+        public string username;
+
+        public Player(string username)
+        {
+            this.username = username;
+        }
+
+        public override string ToString()
+        {
+            return username;
+        }
     }
 
 }
