@@ -1,0 +1,151 @@
+-the Main method is like a magical spell that we have to say in order for our program to run, its the entry point to our program
+-string literal: sequence of characters enclosed within double quotes that represent a string value
+-escape sequences allow you to escape from your string an input a special character to be outputted
+-formatting: essentially manipulating the structure of something
+-creating a variable takes two steps: 1. declaration, 2. initialization
+-in C# floating point literals without any suffix are treated as doubles by default, we have to add the 'f' suffix if we want the compiler to treat it as a float
+-remember to enclose characters in single quote
+-variables are containers for values
+-strings are just series or arrays of characters
+-constants: immutable values which are known at compile time and do not change for the life of a program - they add safety/security to our programs because people cannot later change these values
+-type casting: converting a value to a different data type. - Useful when we accept user input (string) as we might need to perform various operations and different data types have different operations ie: if we have a string then we cannot perform any math on it.
+-if we convert a double to an int it will do some rounding and truncate any decimal portion if there is any
+-we can use the Convert class to call methods to type cast or preceed the data you want to convert with the type in parethesis (explicit cast operator) ie: int c = 123; double d = Convert.ToDouble(c); double d = (double) c; - we can also use int.Parse() to convert a string to its int representation, just pass a string to the Parse() method
+-exceptions will cause our program to pause or crash
+-the augmented assignment operator is considered syntactic sugar ie: friends *= 2; instead of friends = friends * 2;
+-look out for integer division where if we divide and int and the result contains decimal points then the result gets trucated and the decimal part thrown away
+-the modulus operator is also known as the remainder operator - its also very useful for finding out if numbers are even or odd
+-absolute value is how far away the number is from zero ie: double x = 3; double c = Math.Abs(x); Console.WriteLine(c); - here we will get 3 on the console
+-the Round method will round based on how close the decimal part is to the halfway point but if we always want to round up we can use the Ceil method or round down use the Floor method
+-substring method of strings: take a section from a string and create an entirely new string
+-if statement: basic form of desicion making. If a specified condition is true, we exec a block of code, if its not true we can do something else entirely
+-the else block is a last resort or catch all if all of the above conditions evaluate to be false
+-we can check subsquent conditions before reaching the else block with else if 
+-both else and else if are optional when constructing if statements
+-with else if statements, we should put more specific conditions at the top, otherwise another condition could evaluate to true and the wrong block triggered. If more general conditions are at the top then the program may trigger the block with the general condition mistakenly even if the specific condition is also true - so the order of if statements matters
+-switch is an efficient alternative to writing many else / if statements - we should not use many if / else statements as its the mark of an amature programmer. We can use a switch instead in these cases
+-remember you need a break statement to break out of your switch statement at the end of each case, otherwise it will keep going down the list
+-default cases are optional for switch statements, if there is no matches, what do we want to do. If our value does not match any of the cases the default case can be triggered, the default keyword is like the else statement, a catch all or last resort
+-an operand a sub expression within a bigger expression
+-logical operators: can be used to check if more than one condition is true / false, there are two: &&(AND) ||(OR) - && is strict BOTH operands need to be true for the entire expression to be true and the block executed. || is leanient - at least ONE operand has to be true for the entire expression to be true
+-a while loop will repeat some code as long as some condition remains true - it will do so infinitely, until the condition becomes false
+-with a while loop we will want some way to eventually exit the loop ie: the checked condition should eventually evalute to flase at some point to exit, otherwise we can use a break statement
+- a common pattern with while loops is the loop variable is declared and initialized outside the loop as their initial values could be needed before entering the loop. Also loop variables could be initialized with placeholder values outside the loop and then reassigned within the loop based on certain conditions. ie: player = ""; while (player != "ROCK" && player != "PAPER" && player != "SCISSORS") {  Console.Write("Enter ROCK, PAPER, or SCISSORS: "); player = Console.ReadLine(); player = player.ToUpper(); }
+-a for loop will repeat some code a finite amount of times
+-while loops can be infinite as long as its condition remains true but for loops are limited
+-nested loops are loops inside of other loops, they are used often in sorting algos or displaying / working with grids of data. There is an inner and outer loop
+-nested loops how they work: once we enter our outer loop we will immediately enter our inner loop. In order to complete one iteration of the outer loop, we have to fininsh all iterations of the inner loop, then the process repeats until the loops condition on the outer loop evaluates to false then both loops will exit
+-a do while loop is similar to a while loop but it will always execute the loop body at least once then check the condition at the end. While loops check the condition first before executing the loop body so its possible the body will not get executed at all, with do while, you are guarenteed the body will be executed at least once
+-arrays: a variable that can store multiple values, not just one. They have a fixed size, once they are created the size cannot be changed. If you need to change the size you would need to declare a new array at the specified size
+-an easy way to display the elements of an array is to write a for or foreach loop
+-if you would like to declare an array and assign values later, you would need to delcare that array with a fixed size of how mnay elements you are planning to place in that array. However you can declare the array but assign the size later ie: int[] numbers; numbers = new int[5]; or just one go ie: int[] numbers = new int[5]; but generally speaking declaring an array usually includes initializing the size too and the value initialization can be done at a later step.  Also you need to use the new keyword because arrays are reference types ie: string[] cars = new string[3]; - the new keyword allocates memory for the array and returns a reference to the newly allocated memory. Often howeveer its easier to declare and initialize all in the same step using the curly braces syntax ie: string[] cars = { "BMW", "Mustang", "Corvette" }; - this way we can omit the new keyword and the compiler will infer the size of our array
+-foreach loop: simpler and more elegant way to iterate over an array, but its less flexible as it can only go forward, for loops and can go backwards also and skip iterations - they are greta if you need something simple to display the elements of an array
+-method: performs a section of code when its called "invoked".
+-benefits of methods: lets us reuse code without writing it multiple times
+-methods dont have access to variables within another method
+-parameters are what the method is expecting to receive as an argument when the method is invoked
+-we need to have a matching set of arguments and parameters and the order you pass them in matters
+-return keyword: returns data back to the place where a method is invoked. The method call will evaluate to whatever the return value is
+-method overloading: methods share the same name but have different parameters
+-method signature = method name + method parameters - each method must have a unique signature (this also applies for constructors)
+-a methods parameters can take a variable number of arguments if we use the params keyword - the parameter type must be a single dimensional array ie: static double CheckOut(params double[] prices) {} - then call it like: 
+double total = CheckOut(3.99, 5.75, 15); so the params keyword allow a single method to accept a varying amount of arguments, so we dont have to write a lot of method overloads - they are useful when we are unsure, how many arguments are going to be passed in
+-exception is an error that occurs during execution and interrupts (crashes) the normal flow of our program.
+-any code that is considered dangerous where it might cause an exception we can surround in a try block. If we have a try block then we also need a catch block, the catch block catches and handles exceptions when they occur - we just need to specify what kinds of exceptions we want to catch and handle within parethesis and the code to be exec within curly braces, when that exception is caught
+-we can add the type Exception to catch everything but then we have to print a generic message because it will show for any type of exception ie: catch (Exception e) { Console.WriteLine("something went wrong"); } - we can do this as part of adding multiple catch statements but be careful because order of catch statements matter, the more specific clauses should be first, so they can get triggered for that specific exception. Its considered poor practice to use the genenric Exception class by itself because we are basically shrugging when something goes wrong, instead we should let the user know what went wrong - so its better to catch specific exceptions first then at the end use the generic Exception class
+-and the end of try / catch we optionally include a finally block. It always executes regardless if an exception is caught or not. Typically finally blocks are used to close any open files or if they need to reset anything
+-conditional operator (ternary operator): used in conditional assignment if a condition is true / false - it returns a value so we need to assign it to something ie: message = (temperature >= 15) ? "Its warm outside" : "Its cold outside"; - its like a shortcut or syntactic sugar for if / else
+-string interpolation: allows us to insert variables into string literals. Precede a string literal with $ and {} are the placeholders for variables
+-two dimensional arrays: is an array of arrays - they are useful if you need some sort of grid or matrix of data - to access an element we need an index for a row and an index for a column ie: string[,] parkingLot = { { "mustang", "f-150", "explorer" }, { "corvette", "camero", "silverado" }, { "corolla", "camry", "rav4" } }; parkingLot[0, 2] = "Fusion";
+-using nested for loops we can display our two dimensional array as a grid or matrix
+-classes: bundle of related code, that you would like to organise together. They encapsulate data (properties or fields) and behaviour (methods) into a single unit. They can be used as a blueprint to create objects
+-In the absence of an access modifier, methods in C# are by default private
+-object = an instance of a class. Objects can have fields (data or defining characteristics) and methods (behaviour and actions) 
+-difference between fields and properties is properties encapsulate fields and provide getter and setter methods to control access to fields, while fields are the actual data or class variables themselves
+-fields are what an object has, but methods are what an object can do
+-constructors: a special method in a class, it has the same name as the class name and is used to assign arguments to fields when creating an object
+-constructors are automatically called when we instantiate an object. If we do not explicitly create a constructor, there is a default one created for us automatically and that is called when we create an object, but if we explicitly create a constructor we can assign values to fields of an object when that object is instantiated
+-with constructors we are not limited to just assigning values to fields, we can do any other sort of code or logic we want
+-static modifier (keyword): used to declare a static member, which belongs to the class itself rather than to any specific object 
+-to access static members in a static way use the class name then the name of the member
+-because static members belong to the class, all instances of that class are in a way sharing that member
+-in terms of orders of the modifiers, access goes first then static followed by the type / return type then the name of the member
+-we often are adding the static modifier to class members rather than the actual class itself (so the class is not static, but some members are). We would only make the class static to prevent the class being instantiated ie: like the Math class in .NET
+-the static modifier can be applied to a field, a method or to a class itself - this would mean no one object from that class has ownership of it
+-overloaded constructors: technique to create multiple constructors within the same class with a different set of parameters. Multiple constructors have the same name but they have a different set of parameters
+-using overloaded constructors we can create objects with varying amounts of fields.
+-inheritance: 1 or more child classes recieving fields, methods, etc from a common parent
+-the point of inheritance is that we can reuse code - we only need to make a change in a single place rather than many places
+-the abstract keyword is a modifier that we can apply to classes, properties and methods
+-the abstract modifier when applied to a class, indicates that class is missing implementation. It is used to prevent objects being instantiated from that class, ie: the class might only be used as a parent so its children can derive common behaviour, not to be directly instantiated and used. ie: we can mark a Vehicle class as abstract because its children are only mean't to inherit from it, not for it to be instantiated directly. Here the children could be car, bicycle, boat. Its basically used to add some security to our program and is similar to interfaces
+-if we mark a method as abstract, then we need to remove the method body and also need to mark the class as abstract - a use case for this could be to have the abstract method overriden in a child class
+-anonymous objects do not have a name: ie: new Car("Mustang") - this is in constrast to: Car car1 = new Car("Mustang"); - which is a named object
+-when we pass objects as parameters, we need to make sure to type the data type of the object and then the name of the parameter
+-method overriding: provides a new version of a method inherited from a parent class
+-to create an overriding method, the method that is inherited from must be virtual, abstract or already overriden - usually we use virtual
+-method overriding is commonly used with the ToString() method and polymorphism
+-the ToString() method converts an object to its string representation, so its suitable for display. It is an inherent (inherits from the Object class) method of objects. Its job is to 
+-ToString() method by default will show the namespace followed by the type of the object we are working with but we can override the default ToString() method as defined in the object class to display a string representation of our object of our choosing. We can choose how we display that string representation, do we just want to return one field? A couple of fields? Or a concatenated string sentence containing various fields and some text, the choice is up to us.
+-we dont have to directly invoke the ToString() method on an object, we can just reference the object itself and it will automatically invoke the method ie: Console.WriteLine(car); and Console.WriteLine(car.ToString()); are equivilent
+
+===========================
+
+-polymorphism: greek word that means many forms. In programming it means objects can be identified by more than one type ie: Dog is also a Canine, Animal, Organism
+-we can't define classes within methods in both C# and java
+-if we want to create an array with different types of objects we have to find what they have in common ie: Base Class, then we can create an array of the Base Class type and list all the objects in the array - this is polymorphism in action
+-interfaces are similar to a parent or base class. It defines a "template" or "contract" that all classes inheriting from should follow
+-interfaces can contain, properties, methods and events - if any of those declared within an interfaces then all classes inheriting from that interface should implement those members
+-interfaces provide a way to achieve polymorphism by allowing different classes to share a common set of methods or properties defined by the interface, without mandating any specific implementation details.
+-an interface defines "what a class should have" where the inheriting class defines "how it should do it"
+-benefits of interfaces: polymorphism, multiple inheritance, extensible ("plug and play") and loosely coupled apps
+-interfaces do not have access modifiers on their methods but the implementing class will ie: void Hunt(); - interface declaration and public void Hunt() {}; - implementing class declaration
+-in C# standard inheritance you can only inherit from a single parent class but interfaces allow you to implement multiple inheritance
+-List: data structure that represents a list of objects that can be accessed by an index - they are similar to an array but can dynamically increase / decrease in size during runtime which arrays cannot do, the downsize however is they waste more memory
+-getters and setters: adds security to fields through the concept of encapsulation
+-properties combine aspects of both fields and methods, they are like something between a field and a method - they share the same name as the field they are targeting although capitalized. They contain get and set accessor methods
+-properties provide a mechanism for accessing and manipulating data
+-properties provide a level of abstraction by hiding internal implementation details, you only interact with the interface which is the property
+-properties provide encapsulation by controlling acceses to fields, instead of direct access getter and setter methods are used to interact with the field which helps enforce security and data integrity
+-getters and setters are accessors found within a property
+-if we have a private field we can set up a property that has gettors and setters to access and interact with the field values
+-auto-implemented-properties: shortcut when no additional logic is required in the property, you do not have to define a field for a property, you only have to write get; and/or set; inside the property
+-if there is no additional logic besides setting the value and getting the current field, then we can just use an auto-implemented property
+-enums are a special data structure similar to a class that contains a set of named constants which each having an associated integer value. 
+-enums are in name / integer pairs. ie: Name = integer, they are named integer constants. By default the first integer starts at zero if we don't set the integer values.
+-we use enums when we have values that we know will not change
+-to get the integer value from an item we must explicitly convert it to an int ie: Console.WriteLine(Planets.Pluto + " is planet #" + (int)Planets.Pluto);
+-enums are sort of like storing variables, they are named integer constants that will not change throughout the life of a program
+
+-generics: anything that is generic is not specific to any particular data type
+-we can make something generic by adding a set of angle brackets then T ie: <T> - we can add this to classes, methods, fields etc. T is a naming convention thats often used that represents "Type" or "Template" <K,V> is also a common naming convention if we are passing two generic parameters that represent a key / value pair
+-benefits of generics: allows for greater code reusability for different data types. Basically we can write less code and to achieve the same thing
+-note for generics we only declare the angle brackets once after the method / class / field name then omit the angle bracket should we use that parameter in the body 
+ie: public void displayElements<T>(T[] array) { foreach (T item in array) { //do something...}}
+
+-thread: execution path of a program - we can use multiple threads to perform different tasks of our program at the same time. When we begin a program we have one thread that is running, called the "main" thread.
+-we use multi threading in C# to achieve async programming
+
+
+
+
+
+
+===========================
+
+
+
+
+review: namespace vs projects vs solutions vs assemblies
+roadmap: brocodeC# -> brocode DS&A -> teddy smith SQL server -> teddy smith web API .net -> teddy smith finshark -> MOSH DS&A -> MOSH design patterns -> MOSH docker
+
+
+
+
+
+
+
+
+the quick brown fox jumped over the lazy dog
+the quick brown fox jumped over the lazy dog
+the quick brown fox jumped over the lazy dog
+the quick brown fox jumped over the lazy dog
